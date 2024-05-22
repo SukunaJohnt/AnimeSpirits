@@ -29,6 +29,13 @@ repeat wait() until game:IsLoaded()
          game:GetService("ReplicatedStorage"):WaitForChild("ReadyPlayerDungeon"):FireServer()
        end 
 
+         if game:GetService("Players").LocalPlayer.PlayerGui.DungeonUi.Lives.TextLabel.Text == "0 lives..! :(" then 
+            local teleportService = game:GetService("TeleportService") 
+             local player = game.Players.LocalPlayer 
+             local placeID = 11756036029 
+              teleportService:Teleport(placeID, player.Character)
+         end 
+
       for i,v in pairs(workspace:GetChildren())  do 
     if v:IsA("Model") and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Target") and v.Humanoid.Health > 0 then 
    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,0,4)
